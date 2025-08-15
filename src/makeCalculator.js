@@ -9,25 +9,31 @@ function makeCalculator() {
     result: 0,
 
     add(num) {
-      return this.result + num;
+      this.result += num;
+
+      return this;
     },
 
     subtract(num) {
-      return this.result - num;
+      this.result -= num;
+
+      return this;
     },
 
     multiply(num) {
-      return this.result * num;
+      this.result *= num;
+
+      return this;
     },
 
     divide(num) {
-      return this.result / num;
+      this.result /= num;
+
+      return this;
     },
 
     operate(operation, num) {
-      this.result = operation.call(this, num);
-
-      return this;
+      return operation.call(this, num);
     },
 
     reset() {
